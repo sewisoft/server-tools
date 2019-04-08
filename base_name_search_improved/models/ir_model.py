@@ -19,9 +19,10 @@ def _get_rec_names(self):
 
 def _extend_name_results(self, domain, results, limit):
     result_count = len(results)
-    if result_count < limit:
+    if not limit or result_count < limit:
         domain += [('id', 'not in', [x[0] for x in results])]
-        recs = self.search(domain, limit=limit - result_count)
+        new_limit = limit - result_count if limit else None
+        recs = self.search(domain, limit=new_limit)
         results.extend(recs.name_get())
     return results
 
