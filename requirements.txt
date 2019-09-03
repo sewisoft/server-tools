@@ -6,3 +6,4 @@ IPy
 pyopenssl
 sqlalchemy
 pymssql
+pymysql
