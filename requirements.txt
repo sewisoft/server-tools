@@ -5,3 +5,4 @@ acme_tiny
 IPy
 pyopenssl
 sqlalchemy
+pymssql
